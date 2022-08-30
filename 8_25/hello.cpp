@@ -35,6 +35,14 @@ int main() {
   Cat c2("cleve", 1, "pink");
   c1.printCat();
   c2.printCat();
+
+  double * billy;
+  double x = 12;
+  billy = &x;
+  cout << "billy: " << billy << endl;
+  cout << "billy*: " << *billy << endl;
+
+  cout << "&billy: " << &billy << endl;
   
   return 0;
 }
