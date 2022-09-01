@@ -33,6 +33,9 @@ int main() {
     cout << "bobbert: " << bobbert << "\t*bobbert: " << *bobbert << endl;
     bobbert++;
   }
+
+  cout << "*s_arr: " << *s_arr << endl;
+  cout << "&s_arr: " << &s_arr << endl;
   
   delete[] arr;
   return 0;
