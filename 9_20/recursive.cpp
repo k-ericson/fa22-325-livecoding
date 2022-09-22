@@ -41,3 +41,78 @@ void LinkedList::push_front(string s) {
   head = temp;
 }
   
+LinkedList::~LinkedList() {
+  destruct_helper(head);
+}
+
+void LinkedList::destruct_helper(Node *current) {
+  if (current == NULL)
+    return;
+  destruct_helper(current->next);
+  cout << "Removing List member: " << current->data << endl;
+  delete current;
+}
+
+void LinkedList::print() {
+  cout << "HEAD";
+  print_helper(head);
+  cout << "-->NULL" << endl;
+}
+
+void LinkedList::print_helper(Node *current) {
+  if (current == NULL)
+    return;
+  cout << "-->" << current->data;
+  print_helper(current->next);
+}
+
+void LinkedList::push_back(string data) {
+  Node *node = new Node;
+  node->data = data;
+  node->next = NULL;
+
+  if (head == NULL)
+    head = node;
+  else {
+    Node * tail = head;
+    while (tail->next != NULL) {
+      tail = tail->next;
+    }
+    tail->next = node;
+  }
+}
+
+void LinkedList::remove(string s) {
+  Node *tmp, *eraser;
+
+  if (head == NULL)
+    return;
+  if (head->data == s) {
+    eraser = head;
+    head = head->next;
+    delete eraser;
+    return;
+  }
+  tmp = head;
+
+  while(tmp->next != NULL && tmp->next->data != s) {
+    tmp = tmp->next;
+  }
+  if (tmp->next == NULL)
+    return;
+  eraser = tmp->next;
+  tmp->next = eraser->next;
+  delete eraser;
+}
+
+int main() {
+  LinkedList L1;
+  L1.push_front("2");
+  L1.print();
+  L1.push_back("zebra");
+  L1.print();
+  L1.push_front("racecar");
+  L1.print();
+
+  return 0;
+}
