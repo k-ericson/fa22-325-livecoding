@@ -51,3 +51,23 @@ int circle_queue::pop() {
 
   return popped;
 }
+
+int main() {
+  circle_queue larry;
+  larry.print();
+  larry.push(2);
+  larry.print();
+  larry.push(7);
+  larry.push(300);
+  larry.print();
+  int thing = larry.pop();
+  cout << larry.pop() << endl;
+  larry.print();
+  larry.push(3999);
+  larry.push(42);
+  larry.push(7);
+  larry.print();
+  
+  
+  return 0;
+}

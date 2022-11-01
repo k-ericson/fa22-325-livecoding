@@ -113,6 +113,12 @@ int main() {
   L1.print();
   L1.push_front("racecar");
   L1.print();
-
+  L1.push_front("word");
+  L1.push_back("front");
+  L1.push_front("zebra");
+  L1.print();
+  L1.remove("zebra");
+  L1.print();
+  
   return 0;
 }

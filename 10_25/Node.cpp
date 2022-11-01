@@ -1,4 +1,9 @@
 #include "Node.h"
+//#include <iostream>
+#ifndef NULL
+#define NULL 0
+#endif
+using namespace std;
 
 Node::Node(int val) {
   left = NULL;
@@ -11,6 +16,14 @@ Node* Node::getLeft() {
 }
 
 Node* Node::getRight() {
+  return right;
+}
+
+Node* Node::gleft() {
+  return left;
+}
+
+Node* Node::gright() {
   return right;
 }
 

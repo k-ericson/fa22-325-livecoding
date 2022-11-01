@@ -7,6 +7,9 @@ class BinSearTree {
   Node *root;
   int size;
   void destructorHelper(Node* n);
+  void insertHelper(int val, Node* n);
+  void printHelper(Node* n);
+  void deleteNHelper(int val, Node* &n);
  public:
   BinSearTree();
   ~BinSearTree();
